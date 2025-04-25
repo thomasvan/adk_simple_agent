@@ -6,14 +6,12 @@ This project aims to create an AI agent that crawls Reddit for the latest techno
 ## Technology Stack
 
 ### Core Technologies
-- **Google ADK (Agent Development Kit)**: A Python-based toolkit for building and deploying AI agents with built-in Development UI
+- **Google ADK (Agent Development Kit)**: A Python-based toolkit for building and deploying AI agents with built-in Development UI and FastAPI server
 - **Gemini 1.5**: Google's advanced language model for generating high-quality summaries
-- **Flask**: Web framework for creating the API endpoints
 - **uv**: Modern Python package manager for dependency management
 - **PRAW (Python Reddit API Wrapper)**: Official Python library for accessing Reddit's API
 
 ### Additional Components
-- **FastAPI** (alternative): May be considered as a more modern, async-friendly alternative to Flask
 - **Redis**: For caching responses and managing rate limits
 - **SQLite/PostgreSQL**: For storing crawled data and summaries
 - **Background Task Processor**: For scheduling crawls and processing data asynchronously
@@ -30,12 +28,12 @@ This project aims to create an AI agent that crawls Reddit for the latest techno
 └────────────────┘    └───────────────┘    └────────┬───────┘
                                                     │
                                                     ▼
-┌────────────────┐    ┌───────────────┐    ┌────────────────┐
-│                │    │               │    │                │
-│   ADK Dev UI   │◀───│  Flask API    │◀───│  Gemini 1.5    │
-│  & Web Portal  │    │               │    │  Summarizer    │
-│                │    │               │    │                │
-└────────────────┘    └───────────────┘    └────────────────┘
+┌────────────────┐                      ┌────────────────┐
+│                │                      │                │
+│   ADK Dev UI   │◀─────────────────────│  Gemini 1.5    │
+│  & FastAPI     │                      │  Summarizer    │
+│    Server      │                      │                │
+└────────────────┘                      └────────────────┘
 ```
 
 ### Agent Workflow
@@ -60,8 +58,8 @@ This project aims to create an AI agent that crawls Reddit for the latest techno
 - Reddit crawler focused on r/technology, r/programming, r/MachineLearning, and other tech subreddits
 - Daily scheduled crawls to fetch the latest posts
 - Gemini 1.5-powered summarization engine
-- Basic Flask API with endpoints for retrieving summaries
-- Leverage ADK's built-in Development UI for agent interaction and debugging
+- Leverage ADK's built-in FastAPI server for API endpoints
+- Utilize ADK's built-in Development UI for agent interaction and debugging
 - Simple web portal for viewing summaries
 
 ### Future Enhancements
@@ -94,7 +92,7 @@ This project aims to create an AI agent that crawls Reddit for the latest techno
 
 ### Security Concerns
 - Secure API key storage for Reddit and Gemini
-- Implement rate limiting for the Flask API
+- Implement rate limiting for the ADK FastAPI server
 - Handle user data in compliance with privacy regulations
 - Implement proper authentication for admin functions
 
@@ -113,8 +111,8 @@ This project aims to create an AI agent that crawls Reddit for the latest techno
 - Build categorization logic for different tech domains
 
 ### Phase 3: Web API & Integration
-- Develop Flask API endpoints for data access
-- Configure ADK's Development UI for agent interaction
+- Configure ADK's built-in FastAPI server for data access endpoints
+- Set up ADK's Development UI for agent interaction
 - Create a simple web portal that integrates with ADK's UI
 - Implement search and filtering capabilities
 - Add user feedback mechanisms

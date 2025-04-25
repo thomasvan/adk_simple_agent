@@ -43,9 +43,9 @@
 - [ ] Implement prompt templates for different content types
 - [ ] Create unit tests for summarization module
 
-### Flask API Development
+### ADK FastAPI Server Configuration
 
-- [ ] Set up Flask application structure
+- [ ] Configure ADK's built-in FastAPI server
 - [ ] Create RESTful API endpoints for summaries
 - [ ] Implement pagination and filtering
 - [ ] Add error handling and logging
