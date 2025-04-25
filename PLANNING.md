@@ -98,30 +98,32 @@ This project aims to create an AI agent that crawls Reddit for the latest techno
 
 ## Development Approach
 
-### Phase 1: Core Infrastructure
-- Set up project structure and dependencies
-- Implement Reddit crawler with PRAW
-- Create database schema and ORM models
-- Configure Google ADK with Gemini model
+### Phase 1: Minimal ADK Agent & UI Setup
+- Set up core project structure (agent directory, main.py).
+- Configure Google ADK and connect to Gemini 1.5 model.
+- Implement a basic agent core capable of simple interaction.
+- Start and test the ADK Development UI for basic agent chat.
 
-### Phase 2: Summarization Logic
-- Develop prompt engineering for effective summarization
-- Implement Gemini 1.5 integration through ADK
-- Create summary validation and quality control mechanisms
-- Build categorization logic for different tech domains
+### Phase 2: Mock Data Integration & Summarization
+- Define mock Reddit post data structures.
+- Develop prompt engineering for summarization using mock data.
+- Integrate Gemini 1.5 for summarizing mock data.
+- Display summarized mock data via the ADK Development UI.
+- Add basic testing for summarization with mock data.
 
-### Phase 3: Web API & Integration
-- Configure ADK's built-in FastAPI server for data access endpoints
-- Set up ADK's Development UI for agent interaction
-- Create a simple web portal that integrates with ADK's UI
-- Implement search and filtering capabilities
-- Add user feedback mechanisms
+### Phase 3: Reddit Crawler & Database Implementation
+- Implement Reddit crawler module using PRAW.
+- Set up database schema (SQLite initially) and ORM models.
+- Store real crawled data into the database.
+- Integrate the crawler and database with the summarization agent.
+- Add unit tests for crawler and database interactions.
 
-### Phase 4: Deployment & Monitoring
-- Set up monitoring and logging
-- Configure CI/CD pipeline
-- Document API and usage instructions
-- Prepare for production deployment
+### Phase 4: API, Enhancements & Deployment
+- Configure ADK's built-in FastAPI server for data access endpoints.
+- Develop search, filtering, and other API features.
+- Create a simple web portal for viewing summaries.
+- Implement comprehensive testing, monitoring, logging.
+- Prepare for deployment (Docker, CI/CD).
 
 ## Technical Debt & Challenges
 - Reddit's API changes may require adaptation
